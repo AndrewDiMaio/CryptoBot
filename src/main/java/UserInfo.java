@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
 class UserInfo {
-    private String aKey = "default";
-    private String aSecret = "default";
-    private String passphrase = "default";
-    private String recipientEmail = "default";
+    private String aKey = "default1";
+    private String aSecret = "default2";
+    private String passphrase = "default3";
+    private String recipientEmail = "default4";
 
     String getaKey() {
         return aKey;
