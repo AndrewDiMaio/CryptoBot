@@ -37,15 +37,18 @@ public class OrderBook implements Runnable {
 
     private void generateOrderbook() throws IOException {
 
+        BigDecimal price;
         int one = 0;
-        XYChart chart = new XYChartBuilder().width(800).height(600).title("Order Book").xAxisTitle("USD").yAxisTitle("BTC").build();
+        XYChart chart = new XYChartBuilder().width(800).height(600).title("Order Book | Current Price: ").xAxisTitle("USD").yAxisTitle("BTC").build();
         chart.getStyler().setDefaultSeriesRenderStyle(XYSeries.XYSeriesRenderStyle.Area);
         JFrame sw = new SwingWrapper(chart).displayChart();
         updateOrderBook(sw, chart, marketDataService);
         one++;
-        while (one > 1) {
+        while (one > 0) {
             try {
-                Thread.sleep(1000);
+                Thread.sleep(300);
+                price = marketDataService.getTicker(CurrencyPair.BTC_USD).getLast();
+                chart.setTitle("Order Book | Current Price: " + price);
                 updateOrderBook(sw, chart, marketDataService);
                 one++;
             } catch (InterruptedException e) {
