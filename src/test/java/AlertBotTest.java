@@ -10,13 +10,13 @@ public class AlertBotTest {
     @Test
     public void generateAlertBreakdownTest() throws IOException {
         Exchange exchange = AlertBot.generateExchange(new UserInfo());
-        AlertBot.generateAlert("BREAKDOWN", exchange, "cbcryptoalert@gmail.com");
+        Alerts.generateAlert("BREAKDOWN", exchange, "cbcryptoalert@gmail.com");
     }
 
     @Test
     public void generateAlertBreakoutTest() throws IOException {
         Exchange exchange = AlertBot.generateExchange(new UserInfo());
-        AlertBot.generateAlert("BREAKOUT", exchange, "cbcryptoalert@gmail.com");
+        Alerts.generateAlert("BREAKOUT", exchange, "cbcryptoalert@gmail.com");
     }
 
     @Test
@@ -27,11 +27,11 @@ public class AlertBotTest {
 
     @Test
     public void statusBreakoutTest(){
-        Assert.assertEquals("BREAKOUT", AlertBot.status(new BigDecimal(5555555), new BigDecimal(200), new BigDecimal(5000000)));
+        Assert.assertEquals("BREAKOUT", Alerts.status(new BigDecimal(5555555), new BigDecimal(200), new BigDecimal(5000000)));
     }
 
     @Test
     public void statusBreakdownTest(){
-        Assert.assertEquals("BREAKDOWN", AlertBot.status(new BigDecimal(1111), new BigDecimal(12000), new BigDecimal(100000)));
+        Assert.assertEquals("BREAKDOWN", Alerts.status(new BigDecimal(1111), new BigDecimal(12000), new BigDecimal(100000)));
     }
 }

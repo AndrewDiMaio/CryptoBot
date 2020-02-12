@@ -74,6 +74,6 @@ class BreakCheck {
                 e.printStackTrace();
             }
         }
-        return AlertBot.status(price, min, max);
+        return Alerts.status(price, min, max);
     }
 }

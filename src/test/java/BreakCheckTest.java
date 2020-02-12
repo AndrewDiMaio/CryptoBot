@@ -5,8 +5,6 @@ import org.knowm.xchange.Exchange;
 import java.io.IOException;
 import java.math.BigDecimal;
 
-import static org.junit.Assert.*;
-
 public class BreakCheckTest {
 
     @Test
